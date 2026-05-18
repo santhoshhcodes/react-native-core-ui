@@ -1,0 +1,11 @@
+{
+  "common": {
+    "welcome": "மீண்டும் வருக",
+    "login": "உள்நுழை",
+    "cancel": "ரத்துசெய்"
+  },
+  "attendance": {
+    "mark_attendance": "வருகையை பதிவுசெய்",
+    "clock_in": "பணிதொடக்கம்"
+  }
+}

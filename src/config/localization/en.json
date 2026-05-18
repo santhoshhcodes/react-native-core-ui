@@ -1,0 +1,11 @@
+{
+  "common": {
+    "welcome": "Welcome back",
+    "login": "Login",
+    "cancel": "Cancel"
+  },
+  "attendance": {
+    "mark_attendance": "Mark Attendance",
+    "clock_in": "Clock In"
+  }
+}
