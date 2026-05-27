@@ -1,97 +1,79 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Markdown
+# RNKit — Enterprise Mobile Application Foundation
 
-# Getting Started
+RNKit is a highly optimized, type-safe, performance-locked React Native boilerplate template engineered for scalable data grids and seamless offline synchronization operations. The foundation uses a single source of truth structure for theme compliance, custom un-compromised UI controls, and a C++ native bridge execution layer.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🏗️ Core Architectural Blueprint
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+The runtime workspace is structured explicitly to decouple foundational layouts and reusable UI primitives from specific business feature domains:
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+```text
+src/
+├── app/                  # Application initialization configuration wrappers
+│   ├── navigation/       # Type-safe stack navigators and dynamic auth-guard routers
+│   └── providers/        # Redux, TanStack Query, and central Theme Providers
+├── components/           # Global shared atomic view matrix
+│   ├── ui/               # Core interactive elements (AppButton, AppFlashList, etc.)
+│   ├── layouts/          # Padding, margins, and layout structures (Row, Column, Screen)
+│   ├── feedback/         # Modals, blocking layouts, and custom Drum Pickers
+│   └── shared/           # Extracted domain primitives (StatusBadge, ScreenHeader)
+├── config/               # Application-wide system variables
+│   └── theme/            # Theme engine context mappings and design token matrices
+├── database/             # Relational lazy-loading data tier
+│   ├── models/           # Local model schemas mapped back to TypeScript classes
+│   └── sync.ts           # FastAPI delta-sync merge transaction coordinator
+├── hooks/                # Custom state logic blocks (useClock, useNetworkStatus)
+└── modules/              # Context-isolated domain feature directories (auth, hr)
+🛠️ Integrated Technology Framework
+State Optimization: Redux Toolkit utilizing synchronous key-value disk virtualization via react-native-mmkv and redux-persist.
 
-```sh
-# Using npm
-npm start
+Asynchronous Caching Engine: TanStack React Query v5 configured with safe retry budgets and automatic re-sync flags upon network reconnection.
 
-# OR using Yarn
-yarn start
-```
+Network Infrastructure: Custom Axios instance handling dynamic API base-URL hunting and asynchronous 401 token rotation interceptors.
 
-## Step 2: Build and run your app
+High-Performance Rendering: @shopify/flash-list component wrapper locked at a steady, memory-recycled 60 FPS.
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+Local Relational Database: WatermelonDB with lazy-loading records handled natively via C++ JSI bindings to support backend Delta synchronization.
 
-### Android
+Feedback System: Zero-dependency modal arrays, looping native shimmer loading skeletons, and custom clock/calendar linear drum scroll wheels.
 
-```sh
-# Using npm
+🚀 Getting Started
+📦 Prerequisites
+Ensure your environment meets the criteria defined in the official React Native CLI Environment Setup Guide.
+
+1️⃣ Initialization & Installation
+Clone the repository and install the JavaScript dependencies:
+
+Bash
+npm install
+2️⃣ Sync Native Dependencies (macOS only for iOS)
+Run the native CocoaPods pod-file linking system:
+
+Bash
+cd ios && pod install && cd ..
+3️⃣ Fire Up Metro Dev Engine
+Start your local packager server with a forced clean cache pass to compile path aliases cleanly:
+
+Bash
+npx react-native start --clear-cache
+4️⃣ Target Device Build Run
+Open a secondary terminal workspace and launch your targeted target sandbox:
+
+Android Deployment
+Bash
 npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+iOS Deployment
+Bash
 npm run ios
+🔍 Validation, Testing & Code Health
+This architecture uses static code validation metrics. Run the compile check regularly before saving commits into your version control logs:
 
-# OR using Yarn
-yarn ios
-```
+Bash
+npm run typescript
+Note: This runs tsc --noEmit under the hood to completely type-check absolute path aliases (@/*), generic models, and system theme token integrations across the codebase without generating loose output code blocks.
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Now your frontend is officially documented and frozen. Let's move directly onto building out the asynchronous **FastAPI Core Engine** backend!
