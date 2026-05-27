@@ -1,4 +1,3 @@
-Markdown
 # RNKit — Enterprise Mobile Application Foundation
 
 RNKit is a highly optimized, type-safe, performance-locked React Native boilerplate template engineered for scalable data grids and seamless offline synchronization operations. The foundation uses a single source of truth structure for theme compliance, custom un-compromised UI controls, and a C++ native bridge execution layer.
@@ -26,40 +25,40 @@ src/
 │   └── sync.ts           # FastAPI delta-sync merge transaction coordinator
 ├── hooks/                # Custom state logic blocks (useClock, useNetworkStatus)
 └── modules/              # Context-isolated domain feature directories (auth, hr)
+
 🛠️ Integrated Technology Framework
-State Optimization: Redux Toolkit utilizing synchronous key-value disk virtualization via react-native-mmkv and redux-persist.
+State Optimization: Redux Toolkit utilizing synchronous key-value disk virtualization via react-native-mmkv and redux-persist.  
 
-Asynchronous Caching Engine: TanStack React Query v5 configured with safe retry budgets and automatic re-sync flags upon network reconnection.
+Asynchronous Caching Engine: TanStack React Query v5 configured with safe retry budgets and automatic re-sync flags upon network reconnection.  
 
-Network Infrastructure: Custom Axios instance handling dynamic API base-URL hunting and asynchronous 401 token rotation interceptors.
+Network Infrastructure: Custom Axios instance handling dynamic API base-URL hunting and asynchronous 401 token rotation interceptors.  
 
-High-Performance Rendering: @shopify/flash-list component wrapper locked at a steady, memory-recycled 60 FPS.
+High-Performance Rendering: @shopify/flash-list component wrapper locked at a steady, memory-recycled 60 FPS.  
 
-Local Relational Database: WatermelonDB with lazy-loading records handled natively via C++ JSI bindings to support backend Delta synchronization.
+Local Relational Database: WatermelonDB with lazy-loading records handled natively via C++ JSI bindings to support backend Delta synchronization.  
 
-Feedback System: Zero-dependency modal arrays, looping native shimmer loading skeletons, and custom clock/calendar linear drum scroll wheels.
+Feedback System: Zero-dependency modal arrays, looping native shimmer loading skeletons, and custom clock/calendar linear drum scroll wheels.  
 
 🚀 Getting Started
 📦 Prerequisites
-Ensure your environment meets the criteria defined in the official React Native CLI Environment Setup Guide.
+Ensure your environment meets the criteria defined in the official React Native CLI Environment Setup Guide.  
 
 1️⃣ Initialization & Installation
-Clone the repository and install the JavaScript dependencies:
+Clone the repository and install the JavaScript dependencies:  
 
 Bash
 npm install
 2️⃣ Sync Native Dependencies (macOS only for iOS)
-Run the native CocoaPods pod-file linking system:
+Run the native CocoaPods pod-file linking system:  
 
 Bash
 cd ios && pod install && cd ..
-3️⃣ Fire Up Metro Dev Engine
-Start your local packager server with a forced clean cache pass to compile path aliases cleanly:
+Start your local packager server with a forced clean cache pass to compile path aliases cleanly:  
 
 Bash
 npx react-native start --clear-cache
 4️⃣ Target Device Build Run
-Open a secondary terminal workspace and launch your targeted target sandbox:
+Open a secondary terminal workspace and launch your target platform:  
 
 Android Deployment
 Bash
@@ -68,12 +67,8 @@ iOS Deployment
 Bash
 npm run ios
 🔍 Validation, Testing & Code Health
-This architecture uses static code validation metrics. Run the compile check regularly before saving commits into your version control logs:
+This architecture uses static code validation metrics. Run the compile check regularly before saving commits into your version control logs:  
 
 Bash
 npm run typescript
 Note: This runs tsc --noEmit under the hood to completely type-check absolute path aliases (@/*), generic models, and system theme token integrations across the codebase without generating loose output code blocks.
-
----
-
-Now your frontend is officially documented and frozen. Let's move directly onto building out the asynchronous **FastAPI Core Engine** backend!
