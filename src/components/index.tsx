@@ -3,3 +3,6 @@ export * from './layouts';
 
 // Export everything from the ui sub-folder
 export * from './ui';
+
+// Export everything from the forms sub-folder
+export * from './forms';

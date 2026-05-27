@@ -8,14 +8,10 @@ import {
 } from 'react-native';
 
 import { useTheme } from '../../hooks/useTheme';
-
-
-
+import { typography } from '../../config/theme/typography';
 import {
     useTranslation,
 } from 'react-i18next';
-
-const { typography, colors } = useTheme();
 interface AppTextProps extends TextProps {
     tx?: string;
     text?: string;

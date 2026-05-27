@@ -8,6 +8,10 @@ require Pod::Executable.execute_command('node', ['-p',
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
+# 1. Finds the Expo Autolinking engine script
+require_file = File.join(File.dirname(`node --print "require.resolve('expo-modules-core/package.json')"`), "scripts/autolinking.rb")
+require require_file if File.exist?(require_file)
+
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
@@ -16,6 +20,9 @@ end
 
 target 'RNKit' do
   config = use_native_modules!
+  
+  # 2. ADD THIS LINE HERE: This tells CocoaPods to inject all Expo Module dependencies into the RNKit target binary
+  use_expo_modules!
 
   use_react_native!(
     :path => config[:reactNativePath],

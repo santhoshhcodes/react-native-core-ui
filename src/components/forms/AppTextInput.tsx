@@ -8,7 +8,7 @@ import {
     ViewStyle
 } from 'react-native';
 import { useTheme } from '../../hooks/useTheme';
-import { AppText } from './AppText';
+import { AppText } from '../ui/AppText';
 import { Column } from '../layouts/Column';
 import { Row } from '../layouts/Row'; // 👈 Imported your custom Row layout primitive
 

@@ -1,19 +1,24 @@
 import React from 'react';
-import { ThemeProvider } from './providers/ThemeProvider';
-import { SandboxScreen } from '../modules/debug/screens/SandboxScreen';
-import { EmployeeDashboard } from '../modules/debug/screens/EmployeeDashboard';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ThemeProvider } from './providers/ThemeProvider';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { AppNavigator } from './navigation/AppNavigator';
+import { QueryClientProvider } from './providers/QueryClientProvider';
+import { ReduxProvider } from './providers/ReduxProvider';
 
 const App = () => {
   return (
-    // This MUST be here, otherwise useTheme will throw the error you wrote!
-    <SafeAreaProvider> {/* 1. Add this first */}
-      <ThemeProvider>
-
-        <SandboxScreen />
-
-      </ThemeProvider>
-    </SafeAreaProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <ReduxProvider>
+          <QueryClientProvider>
+            <ThemeProvider>
+              <AppNavigator />
+            </ThemeProvider>
+          </QueryClientProvider>
+        </ReduxProvider>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 };
 

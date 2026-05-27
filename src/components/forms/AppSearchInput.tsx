@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { StyleSheet, TouchableOpacity, View, TextInput } from 'react-native';
 import { useTheme } from '../../hooks/useTheme';
 import { AppTextInput } from './AppTextInput';
-import { AppText } from './AppText';
+import { AppText } from '../ui/AppText';
 
 interface AppSearchInputProps {
     value: string;

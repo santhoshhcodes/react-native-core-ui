@@ -8,7 +8,7 @@ import {
     StyleProp,
 } from 'react-native';
 import { useTheme } from '../../hooks/useTheme';
-import { AppText } from './AppText';
+import { AppText } from '../ui/AppText';
 
 export interface ToggleOption<T extends string> {
     key: T;
