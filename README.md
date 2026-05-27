@@ -1,74 +1,262 @@
 # RNKit — Enterprise Mobile Application Foundation
 
-RNKit is a highly optimized, type-safe, performance-locked React Native boilerplate template engineered for scalable data grids and seamless offline synchronization operations. The foundation uses a single source of truth structure for theme compliance, custom un-compromised UI controls, and a C++ native bridge execution layer.
+RNKit is a highly optimized, type-safe, performance-focused React Native boilerplate engineered for scalable enterprise mobile applications, offline-first workflows, and high-performance data synchronization systems.
+
+The architecture is designed around a single source of truth structure with modular feature isolation, reusable UI primitives, dynamic theming, and native-performance storage/database layers.
 
 ---
 
-## 🏗️ Core Architectural Blueprint
-
-The runtime workspace is structured explicitly to decouple foundational layouts and reusable UI primitives from specific business feature domains:
+# 🏗️ Core Architectural Blueprint
 
 ```text
 src/
-├── app/                  # Application initialization configuration wrappers
-│   ├── navigation/       # Type-safe stack navigators and dynamic auth-guard routers
-│   └── providers/        # Redux, TanStack Query, and central Theme Providers
-├── components/           # Global shared atomic view matrix
-│   ├── ui/               # Core interactive elements (AppButton, AppFlashList, etc.)
-│   ├── layouts/          # Padding, margins, and layout structures (Row, Column, Screen)
-│   ├── feedback/         # Modals, blocking layouts, and custom Drum Pickers
-│   └── shared/           # Extracted domain primitives (StatusBadge, ScreenHeader)
-├── config/               # Application-wide system variables
-│   └── theme/            # Theme engine context mappings and design token matrices
-├── database/             # Relational lazy-loading data tier
-│   ├── models/           # Local model schemas mapped back to TypeScript classes
-│   └── sync.ts           # FastAPI delta-sync merge transaction coordinator
-├── hooks/                # Custom state logic blocks (useClock, useNetworkStatus)
-└── modules/              # Context-isolated domain feature directories (auth, hr)
+├── app/                  # Application initialization and providers
+│   ├── navigation/       # Type-safe navigation architecture
+│   └── providers/        # Redux, QueryClient, ThemeProvider
+│
+├── components/           # Shared reusable UI system
+│   ├── ui/               # Atomic components
+│   ├── layouts/          # Structural wrappers
+│   ├── feedback/         # Loading, alerts, modals
+│   └── shared/           # Shared feature primitives
+│
+├── config/               # Environment & app configuration
+│   └── theme/            # Design token system
+│
+├── database/             # Offline/local database layer
+│   ├── models/           # Database schemas
+│   └── sync.ts           # Delta synchronization engine
+│
+├── hooks/                # Reusable custom hooks
+│
+├── libs/                 # Third-party wrappers
+│   ├── storage/
+│   ├── analytics/
+│   └── notifications/
+│
+├── services/             # Business service layer
+│
+├── state/                # Global state management
+│
+├── utils/                # Helpers and utilities
+│
+└── modules/              # Feature-driven architecture
+    ├── auth/
+    ├── hr/
+    ├── inventory/
+    └── crm/
+```
 
-🛠️ Integrated Technology Framework
-State Optimization: Redux Toolkit utilizing synchronous key-value disk virtualization via react-native-mmkv and redux-persist.  
+---
 
-Asynchronous Caching Engine: TanStack React Query v5 configured with safe retry budgets and automatic re-sync flags upon network reconnection.  
+# 🛠️ Integrated Technology Stack
 
-Network Infrastructure: Custom Axios instance handling dynamic API base-URL hunting and asynchronous 401 token rotation interceptors.  
+## State Management
 
-High-Performance Rendering: @shopify/flash-list component wrapper locked at a steady, memory-recycled 60 FPS.  
+- Redux Toolkit
+- Redux Persist
+- react-native-mmkv
 
-Local Relational Database: WatermelonDB with lazy-loading records handled natively via C++ JSI bindings to support backend Delta synchronization.  
+Provides:
 
-Feedback System: Zero-dependency modal arrays, looping native shimmer loading skeletons, and custom clock/calendar linear drum scroll wheels.  
+- centralized predictable state
+- synchronous persistence
+- offline-safe authentication
+- ultra-fast native storage
 
-🚀 Getting Started
-📦 Prerequisites
-Ensure your environment meets the criteria defined in the official React Native CLI Environment Setup Guide.  
+---
 
-1️⃣ Initialization & Installation
-Clone the repository and install the JavaScript dependencies:  
+## Server State & Caching
 
-Bash
+- TanStack React Query v5
+
+Features:
+
+- automatic background re-fetching
+- request deduplication
+- retry handling
+- cache synchronization
+- network recovery support
+
+---
+
+## Networking Layer
+
+- Axios
+- Dynamic Base URL Resolution
+- Request/Response Interceptors
+
+Supports:
+
+- automatic token injection
+- silent refresh-token rotation
+- centralized API management
+- production-safe retry handling
+
+---
+
+## Rendering Performance
+
+- @shopify/flash-list
+
+Optimized for:
+
+- high-volume enterprise datasets
+- memory recycling
+- stable 60 FPS rendering
+- low-overhead virtualization
+
+---
+
+## Offline Database
+
+- WatermelonDB
+- Native JSI bindings
+
+Capabilities:
+
+- lazy-loaded records
+- large-scale local persistence
+- delta synchronization support
+- offline-first workflows
+
+---
+
+## Feedback & UX System
+
+Custom-built UI infrastructure:
+
+- shimmer skeleton loaders
+- global loading overlays
+- modal orchestration
+- segmented controls
+- wheel/drum pickers
+- toast system
+- enterprise dashboard cards
+
+---
+
+# 🚀 Getting Started
+
+## 📦 Prerequisites
+
+Ensure your environment is configured using the official React Native CLI setup:
+
+- Node.js
+- Android Studio
+- Xcode (macOS only)
+- JDK 17+
+- React Native CLI
+
+---
+
+# 1️⃣ Install Dependencies
+
+```bash
 npm install
-2️⃣ Sync Native Dependencies (macOS only for iOS)
-Run the native CocoaPods pod-file linking system:  
+```
 
-Bash
+---
+
+# 2️⃣ Install iOS Pods (macOS only)
+
+```bash
 cd ios && pod install && cd ..
-Start your local packager server with a forced clean cache pass to compile path aliases cleanly:  
+```
 
-Bash
+---
+
+# 3️⃣ Start Metro Server
+
+```bash
 npx react-native start --clear-cache
-4️⃣ Target Device Build Run
-Open a secondary terminal workspace and launch your target platform:  
+```
 
-Android Deployment
-Bash
+---
+
+# 4️⃣ Run Application
+
+## Android
+
+```bash
 npm run android
-iOS Deployment
-Bash
-npm run ios
-🔍 Validation, Testing & Code Health
-This architecture uses static code validation metrics. Run the compile check regularly before saving commits into your version control logs:  
+```
 
-Bash
+## iOS
+
+```bash
+npm run ios
+```
+
+---
+
+# 🔍 Validation & Code Health
+
+Run full TypeScript validation:
+
+```bash
 npm run typescript
-Note: This runs tsc --noEmit under the hood to completely type-check absolute path aliases (@/*), generic models, and system theme token integrations across the codebase without generating loose output code blocks.
+```
+
+This executes:
+
+```bash
+tsc --noEmit
+```
+
+to validate:
+
+- absolute path aliases
+- TypeScript generics
+- theme token typing
+- navigation types
+- module contracts
+
+without generating build artifacts.
+
+---
+
+# 🧠 Architectural Goals
+
+RNKit is engineered around these principles:
+
+- Feature-driven modular architecture
+- Enterprise-grade scalability
+- Offline-first synchronization
+- Predictable state management
+- Type-safe development
+- High rendering performance
+- Clean separation of concerns
+- Production reliability
+
+---
+
+# 📌 Current Foundation Modules
+
+- Authentication System
+- Dynamic Theme Engine
+- HR Management Module
+- Attendance System
+- Leave Management
+- Dashboard Analytics
+- Persistent Session Infrastructure
+- Network Recovery System
+
+---
+
+# 📄 License
+
+MIT License
+
+---
+
+# ✨ Vision
+
+RNKit is designed as a long-term enterprise mobile platform foundation capable of powering:
+
+- ERP systems
+- HRMS platforms
+- inventory systems
+- field-service applications
+- industrial operations dashboards
+- offline enterprise mobility solutions
